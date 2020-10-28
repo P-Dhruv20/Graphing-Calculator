@@ -1,10 +1,10 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\<"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# Graphing Calculator
  > Your author list below should include links to all members GitHub and should begin with a "\<" (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: [Yiu Ming Wong](https://github.com/DexterW1) [Jasmine Ojeda](https://github.com/JasmineOjeda) <[Dhruv Parmar](https://github.com/P-Dhruv20)
  
  > You will be forming a group of **THREE** students and work on an interesting project that you will propose yourself (in this `README.md` document). You can pick any project that you'd like, but it needs ot implement three design patterns. Each of the members in a group is expected to work on at least one design pattern and its test cases. You can, of course, help each other, but it needs to be clear who will be responsible for which pattern and for which general project features.
  
@@ -18,13 +18,20 @@
 
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project?
- > * What are the three design patterns you will be using. For each design pattern you must:
- >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+### Why is it important or interesting to you?
+> * This project is interesting to us because we want to develop a calculator that is able to perform basic calculations including graphs, as well as functions that would be useful for college students.
+### What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+> * We plan to use C++ as our language of choice
+> * SFML (for graph and GUI)
+### What will be the input/output of your project?
+> * Input: String (Character array for user inputted functions/expressions)
+> * Output:
+>   * String (basic calculations)
+>   * Graph (GUI)
+### What are the three design patterns you will be using. For each design pattern you must:
+> * Chain of Responsibility: We chose ‘Chain of Responsibility’ because we felt that to create a reliable GUI interface we would need a set of handlers to process the information. For example, by pushing the letter i (for insert), the user will be able to input another expression while the interface is running. This allows the event to go through the chain of responsibility up until it reaches the window where the graph is displayed.
+> * Strategy: We chose ‘Strategy’ because we need a design for identifying and executing operations for the basic calculations that will be implemented in the calculator. Each context refers to an arithmetic symbol, which will direct the algorithm to the desired operation that will be performed on the given operands. This design pattern would work well with the Shunting-yard algorithm, which already separates the contexts (operators) from its related operands based on the order of operations.
+> * Factory Method: We chose the ‘Factory Method’ because it will work hand-in-hand with our  ‘Strategy’ design pattern. This design will help match up the arithmetic symbols (the contexts for the strategies) with the needed arithmetic operation object needed for the calculation. It will help keep all the cases for the operation objects in the same place.
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
