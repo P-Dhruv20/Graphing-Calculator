@@ -20,14 +20,17 @@
  ## Phase II
  ### Composite Pattern
 <img src="Images/Composite.jpg" width="1000">
+
  * Composite Pattern will be used to incorporate operator classes to perform calculations. These classes will be responsible for the performing arithmetic, trigonometric and discrete calculations. For example, after the shunting yard algorithm has provided a precedence for the operations, different classes for the operations are used to perform the operations on the operands based on the precedence.
  
  ### Chain of Responsibility Pattern
 <img src="Images/Chain.jpg" width="1000">
+
  * The Chain of Responsibility will be used by incorporating an SFML panel and dialog with the user’s interactions. For example, if a user presses a button on interface it will go into the class ProcessEvents and from there it will run the function request which checks different handlers. If the handler matches what the user is asking for then it will end and update based on the specific handler. If not it will be sent down to the next handler to see if it matches what the user is asking for
  
  ### Strategy Pattern
 <img src="Images/Strategy.jpg" width="1000">
+
  * The Strategy Pattern is where the user input will be processed depending on whether they want to do a simple calculation or to graph a function. This would be determined by a prompted switch statement. If a calculation is requested, the CalculationStrategy class will break down the string expression based on the Shunting-yard algorithm. The expression will then use the Composite Pattern arithmetic classes to calculate the operands accordingly. The output would be stringified integer or double. The GraphingStrategy will also break down the string expression based on the Shunting-yard algorithm, but its output would be a visual graph created from the classes provided in the Chain of Responsibility pattern.
  
  > ## Phase III
