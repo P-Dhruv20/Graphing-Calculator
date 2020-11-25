@@ -4,16 +4,18 @@
 #include "base.hpp"
 
 class Sub : public Base{
-	
-	public: 
-		Sub(Base* leftOp, Base* righOp);
-		virtual double evaluate();
-		virtual int evaluateInt(){ };
-		virtual std::string stringify();
-		virtual std::string stringifyInt(){ };
-	private:
-		Base* leftOperand;
-		Base* rightOperand;
+
+    public:
+        Sub(Base* leftOp, Base* righOp);
+        virtual double evaluate();
+        virtual std::string stringify();
+        virtual std::string stringifyInt(){ };
+        virtual int precedence(){};
+        virtual int associative(){};
+        virtual double get_number(){};
+    private:
+        Base* leftOperand;
+        Base* rightOperand;
 };
 
 #endif

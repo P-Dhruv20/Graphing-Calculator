@@ -7,10 +7,13 @@ class Mult : public Base {
     public:
         Mult(Base* left, Base* right);
         virtual double evaluate();
-	virtual int evaluateInt(){ };
         virtual std::string stringify();
-	virtual std::string stringifyInt(){ };
+        virtual std::string stringifyInt(){ };
+        virtual int precedence(){};
+        virtual int associative(){};
+        virtual double get_number(){};
     private:
+        int _type;
         Base* leftOperand;
         Base* rightOperand;
 };
