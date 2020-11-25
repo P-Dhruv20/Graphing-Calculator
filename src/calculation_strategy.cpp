@@ -26,7 +26,7 @@ int CalculationStrategy::inputIsValid(string str) {
 	for(int i = 0; i < str.size(); i++) {
 		str.at(i) = toupper(str.at(i));
 	}	
-
+	cout << str << endl;
 	vector<char> brackets;
 	int operand_count = 0;
 	int operator_count = 0;
@@ -73,26 +73,31 @@ int CalculationStrategy::inputIsValid(string str) {
 				return 0;
 			}
 			else {
-				if(i == 0 || (i+1) == str.size()) {
-                	                return 0;
-                                }
-				else if(c =='C' || c == 'P') {
+				if (c == 'C' && str.find("COS") == string::npos) {
 					if(!isdigit(str.at(i-1)) || !isdigit(str.at(i+1))) {
-						return 0;	
-					}
-					else if (c == 'C' && str.find("COS") == string::npos) {
-						return 0;
+                                                return 0;
+                                   	}
+					else {
+						operator_count++;
 					}
 				}
-				else if(c == 'T') {
-					if (c == 'T' && str.find("TAN") == string::npos) {
-                                                return 0;
-                                        }
+				else if (c == 'T' && str.find("TAN") == string::npos) {
+                                        return 0;
 				}
-				else if(c == 'S') {
-                                        if (c == 'S' && str.find("SIN") == string::npos) {
+				else if (c == 'S' && str.find("SIN") == string::npos) {
+					cout << "INVALID SIGN BRANCH" << endl;
+                                        return 0;
+                                }
+				else if(c == 'P') {
+                                        if(!isdigit(str.at(i-1)) || !isdigit(str.at(i+1))) {
                                                 return 0;
                                         }
+					else {
+						operator_count++;
+					}
+                                }
+				else if(i == 0 || (i+1) == str.size()) {
+                                        return 0;
                                 }	
 			}
 		}
@@ -102,6 +107,7 @@ int CalculationStrategy::inputIsValid(string str) {
 		return 0;
 	}
 	else if (brackets.size() != 0) {
+		cout << "INVALID SYNTAX" << endl;
 		return 0;
 	}
 	

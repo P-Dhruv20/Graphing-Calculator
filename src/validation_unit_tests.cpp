@@ -40,6 +40,13 @@ TEST(CalculationValidationTests, FactorialValid) {
         EXPECT_EQ(test->inputIsValid("5 + 7!"), 1);
 }
 
+TEST(CalculationValidationTests, SineTest) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sin(5) + 7"), 1);
+}
+
+
 TEST(CalculationValidationTests, FactorialInvalid) {
         ExpressionStrategy* test = new CalculationStrategy();
 
@@ -50,6 +57,50 @@ TEST(CalculationValidationTests, EmptyInput) {
         ExpressionStrategy* test = new CalculationStrategy();
 
         EXPECT_EQ(test->inputIsValid(""), 0);
+}
+
+TEST(GraphingValidationTests, SimpleArithmeticValid) {
+	ExpressionStrategy* test = new GraphingStrategy();
+	string str = "4 + 3 - x * 8 / 4";
+
+	EXPECT_EQ(test->inputIsValid(str), 1);
+}
+
+TEST(GraphingValidationTests, SimpleArithmeticMissingOperand) {
+        ExpressionStrategy* test = new GraphingStrategy();
+	string str = "4 + x + ";
+	
+        EXPECT_EQ(test->inputIsValid(str), 0);
+}
+
+TEST(GraphingValidationTests, ParenthesisValid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("(4 + x) / 8 "), 1);
+}
+
+TEST(GraphingValidationTests, ParenthesisInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("(x + 3 / 8 "), 0);
+}
+
+TEST(GraphingValidationTests, EmptyInput) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid(""), 0);
+}
+
+TEST(GraphingValidationTests,NoVariable) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("1 + 8"), 0);
+}
+
+TEST(GraphingValidationTests, MultipleVariables) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("1 + X * x - 3"), 0);
 }
 
 
