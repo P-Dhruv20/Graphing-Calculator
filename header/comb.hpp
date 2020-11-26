@@ -5,7 +5,7 @@
 
 class Comb : public Base {
 	public:
-		Perm(Base* op1, Base* op2);
+		Comb(Base* op1, Base* op2);
 		virtual double evaluate(){ };
 		virtual int evaluateInt();
 		virtual std::string stringify(){ };
