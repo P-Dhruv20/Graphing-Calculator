@@ -17,6 +17,9 @@ ADD_EXECUTABLE(test
 	src/fact.cpp
 	src/comb.cpp
 	src/fact.cpp
+	src/sin.cpp
+	src/cos.cpp
+	src/tan.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

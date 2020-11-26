@@ -9,6 +9,9 @@
 #include "header/perm_test.hpp"
 #include "header/comb_test.hpp"
 #include "header/fact_test.hpp"
+#include "header/sin_test.hpp"
+#include "header/cos_test.hpp"
+#include "header/tan_test.hpp"
 
 TEST(MultTest, MultEvaluateWithSubclass) {
     Add* add = new Add(new Op(3.0), new Op(7.0));
