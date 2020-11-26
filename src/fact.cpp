@@ -16,6 +16,6 @@ int Fact::evaluateInt() {
 }
 
 std::string Fact::stringifyInt() {
-	return NumOperand->stringifyInt() + " ! ";
+	return NumOperand->stringifyInt() + " !";
 }
 
