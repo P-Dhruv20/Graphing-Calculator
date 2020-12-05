@@ -165,6 +165,20 @@ TEST(GraphingValidationTests, MultipleVariables) {
         EXPECT_EQ(test->inputIsValid("1 + X * x - 3"), 0);
 }
 
+TEST(GraphingValidationTests, TrigAndPermValid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sin(x) * Cos(4P8) - 3"), 1);
+}
+
+TEST(GraphingValidationTests, TrigAndPermInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sin() * Cos(4P8) - 3"), 0);
+}
+
+
+
 
 int main(int argc, char **arv) {
 	::testing::InitGoogleTest(&argc, arv);
