@@ -74,6 +74,9 @@ int CalculationStrategy::inputIsValid(string str) {
 			}
 			else {
 				if (c == 'C' && str.find("COS") == string::npos) {
+					if(i == 0 || i == str.size() - 1) {
+						return 0;
+					}
 					if(!isdigit(str.at(i-1)) || !isdigit(str.at(i+1))) {
                                                 return 0;
                                    	}
@@ -81,11 +84,13 @@ int CalculationStrategy::inputIsValid(string str) {
 						operator_count++;
 					}
 				}
+				else if (c == 'C' && str.find("COS") != string::npos) {
+					i += 2;
+				}
 				else if (c == 'T' && str.find("TAN") == string::npos) {
                                         return 0;
 				}
 				else if (c == 'S' && str.find("SIN") == string::npos) {
-					cout << "INVALID SIGN BRANCH" << endl;
                                         return 0;
                                 }
 				else if(c == 'P') {
@@ -95,9 +100,6 @@ int CalculationStrategy::inputIsValid(string str) {
 					else {
 						operator_count++;
 					}
-                                }
-				else if(i == 0 || (i+1) == str.size()) {
-                                        return 0;
                                 }	
 			}
 		}
@@ -107,7 +109,6 @@ int CalculationStrategy::inputIsValid(string str) {
 		return 0;
 	}
 	else if (brackets.size() != 0) {
-		cout << "INVALID SYNTAX" << endl;
 		return 0;
 	}
 	

@@ -46,6 +46,43 @@ TEST(CalculationValidationTests, SineTest) {
         EXPECT_EQ(test->inputIsValid("Sin(5) + 7"), 1);
 }
 
+TEST(CalculationValidationTests, SineCosineTest) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sin(5)*Cos(4/5) + 7"), 1);
+}
+
+TEST(CalculationValidationTests, SineTestInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sn(5) + 7"), 0);
+}
+
+TEST(CalculationValidationTests, CosineTest) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Cos(5) + 7"), 1);
+}
+
+TEST(CalculationValidationTests, CosineTestInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Cs(5) + 7"), 0);
+}
+
+
+TEST(CalculationValidationTests, TangentTest) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Tan(10)"), 1);
+}
+
+TEST(CalculationValidationTests, TangentTestInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Ta(10)"), 0);
+}
+
 
 TEST(CalculationValidationTests, FactorialInvalid) {
         ExpressionStrategy* test = new CalculationStrategy();
@@ -58,6 +95,31 @@ TEST(CalculationValidationTests, EmptyInput) {
 
         EXPECT_EQ(test->inputIsValid(""), 0);
 }
+
+TEST(CalculationValidationTests, CombinatorialValid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("5C8 + 9"), 1);
+}
+
+TEST(CalculationValidationTests, CombinatorialInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("5C + 9"), 0);
+}
+
+TEST(CalculationValidationTests, PermutationsValid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("5P8 + 9"), 1);
+}
+
+TEST(CalculationValidationTests, PermutationsInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("5P + 9"), 0);
+}
+
 
 TEST(GraphingValidationTests, SimpleArithmeticValid) {
 	ExpressionStrategy* test = new GraphingStrategy();
