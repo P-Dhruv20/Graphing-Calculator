@@ -1,6 +1,6 @@
-#include "base.hpp"
+#include "../header/base.hpp"
 
-base::base()
+Base::Base()
 {
 
 }

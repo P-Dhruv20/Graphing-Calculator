@@ -1,5 +1,5 @@
 #include <string>
-#include "mult.hpp"
+#include "../header/mult.hpp"
 
 Mult::Mult(Base* left, Base* right):Base(1),leftOperand(left),rightOperand(right){}
 

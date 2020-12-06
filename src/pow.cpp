@@ -1,4 +1,4 @@
-#include "pow.hpp"
+#include "../header/pow.hpp"
 #include <cmath>
 #include <string>
 
