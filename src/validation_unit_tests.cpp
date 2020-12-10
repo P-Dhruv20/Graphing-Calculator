@@ -22,6 +22,13 @@ TEST(CalculationValidationTests, SimpleArithmeticMissingOperand) {
         EXPECT_EQ(test->inputIsValid(str), 0);
 }
 
+TEST(CalculationValidationTests, SimpleArithmeticMissingOperator) {
+        ExpressionStrategy* test = new CalculationStrategy();
+        string str = "4 +  + ";
+
+        EXPECT_EQ(test->inputIsValid(str), 0);
+}
+
 TEST(CalculationValidationTests, ParenthesisValid) {
         ExpressionStrategy* test = new CalculationStrategy();
 
@@ -46,16 +53,36 @@ TEST(CalculationValidationTests, SineTest) {
         EXPECT_EQ(test->inputIsValid("Sin(5) + 7"), 1);
 }
 
-TEST(CalculationValidationTests, SineCosineTest) {
+TEST(CalculationValidationTests, SineCosineTestValid) {
         ExpressionStrategy* test = new CalculationStrategy();
 
         EXPECT_EQ(test->inputIsValid("Sin(5)*Cos(4/5) + 7"), 1);
 }
 
+TEST(CalculationValidationTests, SineCosineTestInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sin(5)*os(4/5) + 7"), 0);
+}
+
+
+TEST(CalculationValidationTests, AllTrigTestValid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sin(5)*Cos(4/5) + 7"), 1);
+}
+
+
 TEST(CalculationValidationTests, SineTestInvalid) {
         ExpressionStrategy* test = new CalculationStrategy();
 
         EXPECT_EQ(test->inputIsValid("Sn(5) + 7"), 0);
+}
+
+TEST(CalculationValidationTests, MultipleSineTestInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sn(5) +Sin(4)/ 7"), 0);
 }
 
 TEST(CalculationValidationTests, CosineTest) {
@@ -70,6 +97,11 @@ TEST(CalculationValidationTests, CosineTestInvalid) {
         EXPECT_EQ(test->inputIsValid("Cs(5) + 7"), 0);
 }
 
+TEST(CalculationValidationTests, MultipleCosineTestInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Cs(5) + 7 - Cos(34)"), 0);
+}
 
 TEST(CalculationValidationTests, TangentTest) {
         ExpressionStrategy* test = new CalculationStrategy();
@@ -83,6 +115,11 @@ TEST(CalculationValidationTests, TangentTestInvalid) {
         EXPECT_EQ(test->inputIsValid("Ta(10)"), 0);
 }
 
+TEST(CalculationValidationTests, MultipleTangentTestInvalid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Tan(24) - Ta(10)"), 0);
+}
 
 TEST(CalculationValidationTests, FactorialInvalid) {
         ExpressionStrategy* test = new CalculationStrategy();
@@ -95,31 +132,6 @@ TEST(CalculationValidationTests, EmptyInput) {
 
         EXPECT_EQ(test->inputIsValid(""), 0);
 }
-
-TEST(CalculationValidationTests, CombinatorialValid) {
-        ExpressionStrategy* test = new CalculationStrategy();
-
-        EXPECT_EQ(test->inputIsValid("5C8 + 9"), 1);
-}
-
-TEST(CalculationValidationTests, CombinatorialInvalid) {
-        ExpressionStrategy* test = new CalculationStrategy();
-
-        EXPECT_EQ(test->inputIsValid("5C + 9"), 0);
-}
-
-TEST(CalculationValidationTests, PermutationsValid) {
-        ExpressionStrategy* test = new CalculationStrategy();
-
-        EXPECT_EQ(test->inputIsValid("5P8 + 9"), 1);
-}
-
-TEST(CalculationValidationTests, PermutationsInvalid) {
-        ExpressionStrategy* test = new CalculationStrategy();
-
-        EXPECT_EQ(test->inputIsValid("5P + 9"), 0);
-}
-
 
 TEST(GraphingValidationTests, SimpleArithmeticValid) {
 	ExpressionStrategy* test = new GraphingStrategy();
@@ -165,20 +177,101 @@ TEST(GraphingValidationTests, MultipleVariables) {
         EXPECT_EQ(test->inputIsValid("1 + X * x - 3"), 0);
 }
 
-TEST(GraphingValidationTests, TrigAndPermValid) {
+TEST(GraphingValidationTests, TrigValid) {
         ExpressionStrategy* test = new GraphingStrategy();
 
-        EXPECT_EQ(test->inputIsValid("Sin(x) * Cos(4P8) - 3"), 1);
+        EXPECT_EQ(test->inputIsValid("Sin(x) * Cos(48) - 3"), 1);
 }
 
-TEST(GraphingValidationTests, TrigAndPermInvalid) {
+TEST(GraphingValidationTests, TrigInvalid) {
         ExpressionStrategy* test = new GraphingStrategy();
 
-        EXPECT_EQ(test->inputIsValid("Sin() * Cos(4P8) - 3"), 0);
+        EXPECT_EQ(test->inputIsValid("Sin() * Cos(48) - 3"), 0);
 }
 
+TEST(GraphingValidationTests, NonArithmeticInput) {
+        ExpressionStrategy* test = new GraphingStrategy();
 
+        EXPECT_EQ(test->inputIsValid("Hello world!"), 0);
+}
 
+TEST(CalculationValidationTests, NonArithmeticInput) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Hello world!"), 0);
+}
+
+TEST(CalculationValidationTests, SingleOperandValid) {
+        ExpressionStrategy* test = new CalculationStrategy();
+
+        EXPECT_EQ(test->inputIsValid("12"), 1);
+}
+
+TEST(GraphingValidationTests, SingleOperandInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("12"), 0);
+}
+
+TEST(GraphingValidationTests, SingleVariable) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("x"), 1);
+}
+
+TEST(GraphingValidationTests, TangentTest) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Tan(x)"), 1);
+}
+
+TEST(GraphingValidationTests, TangentTestInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Ta(x)"), 0);
+}
+
+TEST(GraphingValidationTests, MultipleTangentTestInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Tan(x) - Ta(10)"), 0);
+}
+
+TEST(GraphingValidationTests, CosineTest) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Cos(x)"), 1);
+}
+
+TEST(GraphingValidationTests, CosineTestInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Co(x)"), 0);
+}
+
+TEST(GraphingValidationTests, MultipleCosineTestInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Cos(x) - Cs(10)"), 0);
+}
+
+TEST(GraphingValidationTests, SineTest) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sin(x)"), 1);
+}
+
+TEST(GraphingValidationTests, SineTestInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Si(x)"), 0);
+}
+
+TEST(GraphingValidationTests, MultipleSineTestInvalid) {
+        ExpressionStrategy* test = new GraphingStrategy();
+
+        EXPECT_EQ(test->inputIsValid("Sin(x) - Sn(10)"), 0);
+}
 
 int main(int argc, char **arv) {
 	::testing::InitGoogleTest(&argc, arv);

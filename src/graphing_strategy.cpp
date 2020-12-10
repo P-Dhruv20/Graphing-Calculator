@@ -73,38 +73,39 @@ int GraphingStrategy::inputIsValid(string str) {
 				return 0;
 			}
 			else {
-				if (c == 'C' && str.find("COS") == string::npos) {
-					if(i == 0 || i == str.size() - 1) {
-						return 0;
-					}
-					if(!isdigit(str.at(i-1)) || !isdigit(str.at(i+1))) {
-                                                return 0;
-                                   	}
-					else {
-						operator_count++;
-					}
-				}
-				else if (c == 'C' && str.find("COS") != string::npos) {
-					i += 2;
-				}
-				else if (c == 'T' && str.find("TAN") == string::npos) {
-                                        return 0;
-				}
-				else if (c == 'S' && str.find("SIN") == string::npos) {
-                                        return 0;
-                                }
-				else if(c == 'P') {
-                                        if(!isdigit(str.at(i-1)) || !isdigit(str.at(i+1))) {
-                                                return 0;
-                                        }
-					else {
-						operator_count++;
-					}
-                                }	
-				else if(c == 'X') {
+				if(c == 'X') {
 					operand_count++;
 					variable_flag++;
-				}	
+				}
+				else if ((c != 'C') && (c != 'T') && (c != 'S')) {
+                                        return 0;
+                                }
+                                else if(c == 'C' && str.find("COS") == string::npos) {
+                                        return 0;
+                                }
+                                else if (c == 'T' && str.find("TAN") == string::npos) {
+                                        return 0;
+                                }
+                                else if (c == 'S' && str.find("SIN") == string::npos) {
+                                        return 0;
+                                }
+                                else {
+                                        i+=2;
+					if (i < str.size()) {
+                                                if(c == 'C' && str.at(i) != 'S') {
+                                                        return 0;
+                                                }
+                                                else if (c == 'T' && str.at(i) != 'N') {
+                                                        return 0;
+                                                }
+                                                else if (c == 'S' && str.at(i) != 'N') {
+                                                        return 0;
+                                                }
+                                        }
+                                        else {
+                                                return 0;
+                                        }
+                                }	
 			}
 		}
 	}
