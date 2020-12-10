@@ -272,8 +272,3 @@ TEST(GraphingValidationTests, MultipleSineTestInvalid) {
 
         EXPECT_EQ(test->inputIsValid("Sin(x) - Sn(10)"), 0);
 }
-
-int main(int argc, char **arv) {
-	::testing::InitGoogleTest(&argc, arv);
-	return RUN_ALL_TESTS();
-}
