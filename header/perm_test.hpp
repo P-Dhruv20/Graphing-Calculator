@@ -11,7 +11,7 @@ TEST(PermTest, PermEvaluateNonZero){
 	EXPECT_EQ(test->evaluateInt(), 2);
 }
 
-TEST(PermTest, PermEvaluateZero){
+TEST(PermTest, PermEvaluateZeroOp2){
 	Perm* test = new Perm(new Op(5), new Op(0));
 	EXPECT_EQ(test->evaluateInt(), 1);
 }
@@ -23,6 +23,16 @@ TEST(PermTest, PermEvaluateNegative){
 
 TEST(PermTest, PermEvaluateTwoNegatives){
 	Perm* test = new Perm(new Op(-3), new Op(-10));
+	EXPECT_EQ(test->evaluateInt(), 1);
+}
+
+TEST(PermTest, PermEvaluateZeroOp1){
+	Perm* test = new Perm(new Op(0), new Op(0));
+	EXPECT_EQ(test->evaluateInt(), 1);
+}
+
+TEST(PermTest, PermEvaluateGreaterOp2){
+	Perm* test = new Perm(new Op(10), new Op(15));
 	EXPECT_EQ(test->evaluateInt(), 1);
 }
 
