@@ -39,15 +39,17 @@
  <img src="calculation1.jpg" width="1000">
  <img src="calculation2.jpg" width="1000">
  * Examples of the output for graphing a function
- <img src="graphing1.jpg" width="10000">
- <img src="graphing2.jpg" width="10000">
+ <img src="graphing1.jpg" width="1000">
+ <img src="graphing2.jpg" width="1000">
+ 
  ## Installation/Usage
-  * To install this program please download Qt Creator (https://www.qt.io/offline-installers [offline installer 5.12.x])
-  * After running the installation please make sure to check the box 5.12.10 to install the necessary tools. 
-  * After Qt has downloaded go to New File or Project -> Import Project -> Git Clone -> Choose.
-  * At the top where it says Repository: enter our github link ←------ (https://github.com/cs100/final-project-ywong019-dparm003-jojed016.git).
-  * Make sure to check the mark that says recursive then hit next.
-  * The project should load and you can hit ctrl+r or command+r or press the triangle at the bottom left to run the program.
+ * To install this program please download Qt Creator (https://www.qt.io/offline-installers [offline installer 5.12.x])
+ * After running the installation please make sure to check the box 5.12.10 to install the necessary tools. 
+ * After Qt has downloaded go to New File or Project -> Import Project -> Git Clone -> Choose.
+ * At the top where it says Repository: enter our github link ←------ (https://github.com/cs100/final-project-ywong019-dparm003-jojed016.git).
+ * Make sure to check the mark that says recursive then hit next.
+ * The project should load and you can hit ctrl+r or command+r or press the triangle at the bottom left to run the program.
+ 
  ## Testing
  > We used googletests to create unit tests for individual functions in each feature, such as ensuring the validation system and the arithmetic operations were satisfactory. We performed manual GUI testing for the graphing feature, verifying with outside sources.
  
