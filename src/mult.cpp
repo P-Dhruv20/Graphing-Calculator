@@ -1,10 +1,7 @@
 #include <string>
 #include "../header/mult.hpp"
 
-Mult::Mult(Base* left, Base* right) {
-    this->leftOperand = left;
-    this->rightOperand = right;
-}
+Mult::Mult(Base* left, Base* right):Base(1),leftOperand(left),rightOperand(right){}
 
 double Mult::evaluate() {
     return leftOperand->evaluate() * rightOperand->evaluate();
