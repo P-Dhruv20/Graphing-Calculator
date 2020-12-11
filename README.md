@@ -37,12 +37,12 @@
  
  ## Screenshots
  * Examples of the output for simple calculations
- <img src="calculation1.jpg" width="1000">
- <img src="calculation2.jpg" width="1000">
+ <img src="calculation1.JPG" width="1000">
+ <img src="calculation2.JPG" width="1000">
  
  * Examples of the output for graphing a function
- <img src="graphing1.jpg" width="1000">
- <img src="graphing2.jpg" width="1000">
+ <img src="graphing1.JPG" width="1000">
+ <img src="graphing2.JPG" width="1000">
  
  ## Installation/Usage
  * To install this program please download Qt Creator (https://www.qt.io/offline-installers [offline installer 5.12.x])
@@ -50,6 +50,7 @@
  * After Qt has downloaded go to New File or Project -> Import Project -> Git Clone -> Choose.
  * At the top where it says Repository: enter our github link ←------ (https://github.com/cs100/final-project-ywong019-dparm003-jojed016.git).
  * Make sure to check the mark that says recursive then hit next.
+ * Please also install SFML (https://www.sfml-dev.org/download/sfml/2.5.1/) and choose [GCC 7.3.0 MinGW (DW2) - 32-bit]. Have project and SFML folders in the same directory.
  * The project should load and you can hit ctrl+r or command+r or press the triangle at the bottom left to run the program.
  
  ## Testing
