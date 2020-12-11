@@ -7,6 +7,8 @@ class Sub : public Base{
 
     public:
         Sub(Base* leftOp, Base* righOp);
+
+        virtual int evaluateInt(){};
         virtual double evaluate();
         virtual std::string stringify();
         virtual std::string stringifyInt(){ };

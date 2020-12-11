@@ -1,7 +1,7 @@
 #ifndef __CALCULATION_STRATEGY_HPP__
 #define __CALCULATION_STRATEGY_HPP__
 
-#include "expressionstrategy.hpp"
+#include "expression_strategy.hpp"
 
 #include <string>
 

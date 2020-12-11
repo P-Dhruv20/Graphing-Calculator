@@ -16,7 +16,11 @@ ADD_EXECUTABLE(test
 	src/sin.cpp
 	src/cos.cpp
 	src/tan.cpp
-
+	src/operator.cpp
+	src/eval.cpp
+	src/trig.cpp
+	src/calculation_strategy.cpp
+	src/graphing_strategy.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

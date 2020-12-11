@@ -6,11 +6,12 @@ using namespace std;
 class Base {
     public:
         /* Constructors */
-        Base() ;
+        Base(){} ;
         Base(int type):_type(type){}
 
         /* Pure Virtual Functions */
         virtual double evaluate() = 0;
+	virtual int evaluateInt() = 0;
         virtual std::string stringifyInt() = 0;
         virtual std::string stringify() = 0;
         virtual int precedence() = 0;

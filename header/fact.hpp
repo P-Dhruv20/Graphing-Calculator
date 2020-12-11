@@ -10,6 +10,9 @@ class Fact : public Base {
 		virtual int evaluateInt();
 		virtual std::string stringify(){ };
 		virtual std::string stringifyInt();
+                virtual int associative(){};
+                virtual int precedence(){};
+
 	private:
 		Base* NumOperand;
 };

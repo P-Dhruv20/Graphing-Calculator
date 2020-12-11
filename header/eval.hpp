@@ -10,7 +10,7 @@
 #include "trig.hpp"
 using namespace std;
 
-double eval(queue<Base*>&q);
+double eval(queue<Base*>&q,double var);
 queue<Base *> shunting_yard(string input);
 
 #endif // EVAL_HPP

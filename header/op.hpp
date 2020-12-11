@@ -7,6 +7,8 @@
 class Op : public Base {
     public:
            Op(double value);
+
+        virtual int evaluateInt(){};
            virtual double evaluate();
            virtual std::string stringify();
            virtual std::string stringifyInt(){};

@@ -6,6 +6,8 @@
 class Div : public Base {
     public:
         Div(Base* leftOp, Base* rightOp);
+
+        virtual int evaluateInt(){};
         virtual double evaluate();
         virtual std::string stringify();
         virtual std::string stringifyInt(){ };

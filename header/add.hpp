@@ -7,6 +7,7 @@ class Add : public Base {
     public:
         Add(Base* leftOp, Base* rightOp);
         virtual double evaluate();
+        virtual int evaluateInt(){};
         virtual std::string stringify();
         virtual std::string stringifyInt(){};
         virtual int precedence(){};

@@ -1,4 +1,4 @@
-#include "trig.hpp"
+#include "../header/trig.hpp"
 
 Trig::Trig(string name):Base(3),_name(name){}
 

@@ -1,5 +1,5 @@
 #include "../header/eval.hpp"
-double eval(queue<Base *> &q){
+double eval(queue<Base *> &q,double var){
     Base* hold;
     Operator* oper;
     double result;
@@ -26,9 +26,9 @@ double eval(queue<Base *> &q){
              result = oper->evaluating(left,right);
              s.push(new Op(result));
             break;
-//        case 2:
-//            s.push(new Op(var));
-//            break;
+        case 2:
+            s.push(new Op(var));
+            break;
         case 3:
             top = s.top();
             s.pop();

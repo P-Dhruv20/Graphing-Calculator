@@ -6,6 +6,8 @@
 class Mult : public Base {
     public:
         Mult(Base* left, Base* right);
+
+        virtual int evaluateInt(){};
         virtual double evaluate();
         virtual std::string stringify();
         virtual std::string stringifyInt(){ };

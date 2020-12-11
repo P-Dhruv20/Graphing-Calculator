@@ -7,6 +7,8 @@ class Trig : public Base
 {
 public:
     Trig(string name);
+
+    virtual int evaluateInt(){};
     virtual double evaluate(){};
     virtual std::string stringify();
     virtual std::string stringifyInt(){};

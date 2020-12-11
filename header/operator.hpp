@@ -12,6 +12,8 @@ class Operator: public Base{
 public:
     Operator(Base* leftop, Base* rightop);
     Operator(char a);
+
+        virtual int evaluateInt(){};
     virtual double evaluate();
     virtual std::string stringify(){};
     virtual std::string stringifyInt(){};

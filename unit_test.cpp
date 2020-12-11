@@ -6,13 +6,11 @@
 #include "header/pow_test.hpp"
 #include "header/add_test.hpp"
 #include "header/sub_test.hpp"
-#include "header/perm_test.hpp"
-#include "header/comb_test.hpp"
-#include "header/fact_test.hpp"
 #include "header/sin_test.hpp"
 #include "header/cos_test.hpp"
 #include "header/tan_test.hpp"
-
+#include "header/shunting_yard_test.hpp"
+#include "header/validation_unit_tests.hpp"
 TEST(MultTest, MultEvaluateWithSubclass) {
     Add* add = new Add(new Op(3.0), new Op(7.0));
     Sub* sub = new Sub(new Op(5.0), new Op(1.0));

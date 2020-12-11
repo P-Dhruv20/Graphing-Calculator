@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "../header/expression_strategy.hpp"
-#include "../header/calculation_strategy.hpp"
-#include "../header/graphing_strategy.hpp"
+#include "expression_strategy.hpp"
+#include "calculation_strategy.hpp"
+#include "graphing_strategy.hpp"
 
 #include <iostream>
 #include <string>
