@@ -19,7 +19,7 @@
 
  ## Phase II
  ### Composite Pattern
-<img src="Images/Composite.jpg" width="1000">
+<img src="Images/Composite.png" width="1000">
 
  * Composite Pattern will be used to incorporate operator classes to perform calculations. These classes will be responsible for the performing arithmetic, trigonometric and discrete calculations. For example, after the shunting yard algorithm has provided a precedence for the operations, different classes for the operations are used to perform the operations on the operands based on the precedence.
  
@@ -32,25 +32,22 @@
 <img src="Images/Strategy.jpg" width="1000">
 
  * The Strategy Pattern is where the user input will be processed depending on whether they want to do a simple calculation or to graph a function. This would be determined by a prompted switch statement. If a calculation is requested, the CalculationStrategy class will break down the string expression based on the Shunting-yard algorithm. The expression will then use the Composite Pattern arithmetic classes to calculate the operands accordingly. The output would be stringified integer or double. The GraphingStrategy will also break down the string expression based on the Shunting-yard algorithm, but its output would be a visual graph created from the classes provided in the Chain of Responsibility pattern.
- 
- > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
 
  > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
- > Screenshots of the input/output after running your application
+ * Examples of the output for simple calculations
+ <img src="calculation1.jpg" width="1000">
+ <img src="calculation2.jpg" width="1000">
+ * Examples of the output for graphing a function
+ <img src="graphing1.jpg" width="10000">
+ <img src="graphing2.jpg" width="10000">
  ## Installation/Usage
- > Instructions on installing and running your application
+  * To install this program please download Qt Creator (https://www.qt.io/offline-installers [offline installer 5.12.x])
+  * After running the installation please make sure to check the box 5.12.10 to install the necessary tools. 
+  * After Qt has downloaded go to New File or Project -> Import Project -> Git Clone -> Choose.
+  * At the top where it says Repository: enter our github link ←------ (https://github.com/cs100/final-project-ywong019-dparm003-jojed016.git).
+  * Make sure to check the mark that says recursive then hit next.
+  * The project should load and you can hit ctrl+r or command+r or press the triangle at the bottom left to run the program.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > We used googletests to create unit tests for individual functions in each feature, such as ensuring the validation system and the arithmetic operations were satisfactory. We performed manual GUI testing for the graphing feature, verifying with outside sources.
  
