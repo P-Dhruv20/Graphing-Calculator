@@ -37,12 +37,12 @@
  
  ## Screenshots
  * Examples of the output for simple calculations
- <img src="calculation1.JPG" width="1000">
- <img src="calculation2.JPG" width="1000">
+ <img src="Images/calculation1.JPG" width="1000">
+ <img src="Images/calculation2.JPG" width="1000">
  
  * Examples of the output for graphing a function
- <img src="graphing1.JPG" width="1000">
- <img src="graphing2.JPG" width="1000">
+ <img src="Images/graphing1.JPG" width="1000">
+ <img src="Images/graphing2.JPG" width="1000">
  
  ## Installation/Usage
  * To install this program please download Qt Creator (https://www.qt.io/offline-installers [offline installer 5.12.x])
