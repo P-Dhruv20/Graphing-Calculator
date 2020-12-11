@@ -1,25 +1,26 @@
+
 #include "../header/calculation_strategy.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <ctype.h>
 #include<cctype>
-
+#include "eval.hpp"
 using namespace std;
 
 void CalculationStrategy::execute() {
-	this->getUserInput();
-	while(this->inputIsValid(this->user_expression) == 0) {
-		cout << "INVALID INPUT" << endl;
-		this->getUserInput();
-	}
-	
-	this->getCalculation();
+    this->getUserInput();
+    while(this->inputIsValid(this->user_expression) == 0) {
+        cout << "INVALID INPUT" << endl;
+        this->getUserInput();
+    }
+
+    this->getCalculation();
 }
 
 void CalculationStrategy::getUserInput() {
-	cout << "Enter your expression: ";
-	cin >> this->user_expression;
+    cout << "Enter your expression: ";
+    cin >> this->user_expression;
 }
 
 int CalculationStrategy::inputIsValid(string str) {
@@ -114,7 +115,10 @@ int CalculationStrategy::inputIsValid(string str) {
 }
 
 void CalculationStrategy::getCalculation() {
-	cout << "TODO: CALCULATION STRATEGY getCalculation()"<< endl;
-	cout << "Call Shunting-yard alg for calculation, parameters being user_expression" << endl;
-	cout << "Make sure to include alg header file" << endl;	
+    queue<Base*> hold;
+    double results = 0;
+    hold = shunting_yard(user_expression);
+    results = eval(hold,1);
+    cout<<"Results: "<<results<<endl;
+
 }
