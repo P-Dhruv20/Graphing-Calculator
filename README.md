@@ -33,11 +33,13 @@
 
  * The Strategy Pattern is where the user input will be processed depending on whether they want to do a simple calculation or to graph a function. This would be determined by a prompted switch statement. If a calculation is requested, the CalculationStrategy class will break down the string expression based on the Shunting-yard algorithm. The expression will then use the Composite Pattern arithmetic classes to calculate the operands accordingly. The output would be stringified integer or double. The GraphingStrategy will also break down the string expression based on the Shunting-yard algorithm, but its output would be a visual graph created from the classes provided in the Chain of Responsibility pattern.
 
- > ## Final deliverable
+ ### Final deliverable
+ 
  ## Screenshots
  * Examples of the output for simple calculations
  <img src="calculation1.jpg" width="1000">
  <img src="calculation2.jpg" width="1000">
+ 
  * Examples of the output for graphing a function
  <img src="graphing1.jpg" width="1000">
  <img src="graphing2.jpg" width="1000">
@@ -51,5 +53,5 @@
  * The project should load and you can hit ctrl+r or command+r or press the triangle at the bottom left to run the program.
  
  ## Testing
- > We used googletests to create unit tests for individual functions in each feature, such as ensuring the validation system and the arithmetic operations were satisfactory. We performed manual GUI testing for the graphing feature, verifying with outside sources.
+ * We used googletests to create unit tests for individual functions in each feature, such as ensuring the validation system and the arithmetic operations were satisfactory. We performed manual GUI testing for the graphing feature, verifying with outside sources.
  
