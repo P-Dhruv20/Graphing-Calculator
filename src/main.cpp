@@ -1,9 +1,20 @@
 #include <iostream>
 #include "base.cpp"
+#include <queue>
+#include "eval.cpp"
+#include "operator.cpp"
+#include "op.cpp"
+#include "add.cpp"
+#include "sub.cpp"
+#include "div.cpp"
+#include "pow.cpp"
+#include "mult.cpp"
+#include "trig.cpp"
 
 using namespace std;
 
 int main(){
+  cout<<"HELLO";
   queue<Base*> hold;
   string temp2;
   cout<<endl<<endl;

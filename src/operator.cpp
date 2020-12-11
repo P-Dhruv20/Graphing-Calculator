@@ -1,4 +1,4 @@
-#include "operator.hpp"
+#include "../header/operator.hpp"
 Operator::Operator(Base* leftop, Base* rightop){
     leftoperand=leftop;
     rightoperand=rightop;

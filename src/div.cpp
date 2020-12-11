@@ -1,5 +1,5 @@
-#include "div.hpp"
-#include "op.hpp"
+#include "../header/div.hpp"
+#include "../header/op.hpp"
 #include <string>
 
 Div::Div(Base* leftOp, Base* rightOp){

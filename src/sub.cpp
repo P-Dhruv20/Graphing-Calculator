@@ -1,4 +1,4 @@
-#include "sub.hpp"
+#include "../header/sub.hpp"
 #include <string>
 
 Sub::Sub(Base* leftOp, Base* rightOp):Base(1),leftOperand(leftOp),rightOperand(rightOp){}

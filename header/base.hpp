@@ -6,7 +6,7 @@ using namespace std;
 class Base {
     public:
         /* Constructors */
-        Base() {};
+        Base() ;
         Base(int type):_type(type){}
 
         /* Pure Virtual Functions */
