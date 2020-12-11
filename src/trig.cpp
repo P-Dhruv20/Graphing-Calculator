@@ -1,4 +1,4 @@
-#include "../header/trig.hpp"
+#include "trig.hpp"
 
 Trig::Trig(string name):Base(3),_name(name){}
 
@@ -17,4 +17,3 @@ double Trig::evaluating(double result){
 std::string Trig::stringify(){
     return _name;
 }
-
