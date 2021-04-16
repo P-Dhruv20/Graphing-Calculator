@@ -1,5 +1,5 @@
 # Graphing Calculator
-  Authors: [Yiu Ming Wong](https://github.com/DexterW1), [Jasmine Ojeda](https://github.com/JasmineOjeda), [Dhruv Parmar](https://github.com/P-Dhruv20)
+  Authors:  [Dhruv Parmar](https://github.com/P-Dhruv20), [Yiu Ming Wong](https://github.com/DexterW1), [Jasmine Ojeda](https://github.com/JasmineOjeda)
  
 ## Project Description
 ### Why is it important or interesting to you?
